@@ -1,0 +1,14 @@
+D:\manue\Manuel\repos\SWD\MTime\bin\Debug\netcoreapp3.1\MTime.exe
+D:\manue\Manuel\repos\SWD\MTime\bin\Debug\netcoreapp3.1\MTime.deps.json
+D:\manue\Manuel\repos\SWD\MTime\bin\Debug\netcoreapp3.1\MTime.runtimeconfig.json
+D:\manue\Manuel\repos\SWD\MTime\bin\Debug\netcoreapp3.1\MTime.runtimeconfig.dev.json
+D:\manue\Manuel\repos\SWD\MTime\bin\Debug\netcoreapp3.1\MTime.dll
+D:\manue\Manuel\repos\SWD\MTime\bin\Debug\netcoreapp3.1\MTime.pdb
+D:\manue\Manuel\repos\SWD\MTime\obj\Debug\netcoreapp3.1\MTime.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\MTime\obj\Debug\netcoreapp3.1\MTime.GeneratedMSBuildEditorConfig.editorconfig
+D:\manue\Manuel\repos\SWD\MTime\obj\Debug\netcoreapp3.1\MTime.AssemblyInfoInputs.cache
+D:\manue\Manuel\repos\SWD\MTime\obj\Debug\netcoreapp3.1\MTime.AssemblyInfo.cs
+D:\manue\Manuel\repos\SWD\MTime\obj\Debug\netcoreapp3.1\MTime.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\MTime\obj\Debug\netcoreapp3.1\MTime.dll
+D:\manue\Manuel\repos\SWD\MTime\obj\Debug\netcoreapp3.1\MTime.pdb
+D:\manue\Manuel\repos\SWD\MTime\obj\Debug\netcoreapp3.1\MTime.genruntimeconfig.cache

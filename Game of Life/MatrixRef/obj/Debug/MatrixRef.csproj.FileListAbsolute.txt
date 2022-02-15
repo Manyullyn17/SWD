@@ -1,0 +1,36 @@
+D:\SCU1415\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.exe
+D:\SCU1415\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.pdb
+D:\SCU1415\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.csprojResolveAssemblyReference.cache
+D:\SCU1415\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.exe
+D:\SCU1415\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.pdb
+D:\SCU1516\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.exe
+D:\SCU1516\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.pdb
+D:\SCU1516\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.exe
+D:\SCU1516\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.pdb
+D:\SCU1516\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.csprojResolveAssemblyReference.cache
+D:\SCU1617\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.exe
+D:\SCU1617\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.pdb
+D:\SCU1617\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.exe
+D:\SCU1617\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.pdb
+D:\SCU1617\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.csprojResolveAssemblyReference.cache
+D:\SCU1718\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.exe
+D:\SCU1718\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.pdb
+D:\SCU1718\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.exe
+D:\SCU1718\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.pdb
+D:\SCU1718\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.csprojResolveAssemblyReference.cache
+D:\SCU1819\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.exe
+D:\SCU1819\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.pdb
+D:\SCU1819\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.exe
+D:\SCU1819\SwDev4te\Life\MatrixRef\bin\Debug\MatrixRef.pdb
+D:\SCU1819\SwDev4te\Life\MatrixRef\obj\Debug\MatrixRef.csprojResolveAssemblyReference.cache
+D:\SCU2021\Swdev4te\Life\MatrixRef\obj\Debug\MatrixRef.exe
+D:\SCU2021\Swdev4te\Life\MatrixRef\obj\Debug\MatrixRef.pdb
+D:\SCU2021\Swdev4te\Life\MatrixRef\bin\Debug\MatrixRef.exe
+D:\SCU2021\Swdev4te\Life\MatrixRef\bin\Debug\MatrixRef.pdb
+D:\SCU2021\Swdev4te\Life\MatrixRef\obj\Debug\MatrixRef.csprojResolveAssemblyReference.cache
+D:\manue\Manuel\repos\SWD\Game of Life\MatrixRef\bin\Debug\MatrixRef.exe
+D:\manue\Manuel\repos\SWD\Game of Life\MatrixRef\bin\Debug\MatrixRef.pdb
+D:\manue\Manuel\repos\SWD\Game of Life\MatrixRef\obj\Debug\MatrixRef.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\Game of Life\MatrixRef\obj\Debug\MatrixRef.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\Game of Life\MatrixRef\obj\Debug\MatrixRef.exe
+D:\manue\Manuel\repos\SWD\Game of Life\MatrixRef\obj\Debug\MatrixRef.pdb

@@ -1,0 +1,10 @@
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\V1.LifeForm.resources
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\bin\Debug\WireWorld V1.exe.config
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\bin\Debug\WireWorld V1.exe
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\bin\Debug\WireWorld V1.pdb
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld V1.exe
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld V1.pdb

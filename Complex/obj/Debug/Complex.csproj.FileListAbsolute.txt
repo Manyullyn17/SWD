@@ -1,0 +1,7 @@
+D:\manue\Manuel\repos\SWD\Complex\bin\Debug\Complex.exe.config
+D:\manue\Manuel\repos\SWD\Complex\bin\Debug\Complex.exe
+D:\manue\Manuel\repos\SWD\Complex\bin\Debug\Complex.pdb
+D:\manue\Manuel\repos\SWD\Complex\obj\Debug\Complex.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\Complex\obj\Debug\Complex.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\Complex\obj\Debug\Complex.exe
+D:\manue\Manuel\repos\SWD\Complex\obj\Debug\Complex.pdb
