@@ -33,3 +33,8 @@
 
 # User specific files
 *.user
+
+# Binary files
+*.suo
+*.pdb
+*.cache
