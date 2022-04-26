@@ -1,0 +1,27 @@
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\bin\Debug\MiniCadTest.exe
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\bin\Debug\MiniCadTest.pdb
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\obj\x86\Debug\MiniCad V1.csproj.AssemblyReference.cache
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\obj\x86\Debug\Andlar.FormAndlar.resources
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\obj\x86\Debug\Andlar.Properties.Resources.resources
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\obj\x86\Debug\MiniCad V1.csproj.GenerateResource.cache
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\obj\x86\Debug\MiniCad V1.csproj.CoreCompileInputs.cache
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\obj\x86\Debug\MiniCadTest.exe
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_Start\obj\x86\Debug\MiniCadTest.pdb
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\bin\Debug\MiniCadTest.exe
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\bin\Debug\MiniCadTest.pdb
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.AssemblyReference.cache
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\obj\x86\Debug\Andlar.FormAndlar.resources
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\obj\x86\Debug\Andlar.Properties.Resources.resources
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.GenerateResource.cache
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.CoreCompileInputs.cache
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\obj\x86\Debug\MiniCadTest.exe
+C:\Users\manue\Desktop\Manuel\repos\SWD\MiniCad_V1\obj\x86\Debug\MiniCadTest.pdb
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\bin\Debug\MiniCadTest.exe
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\bin\Debug\MiniCadTest.pdb
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\Andlar.FormAndlar.resources
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\Andlar.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCadTest.exe
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCadTest.pdb
