@@ -1,0 +1,5 @@
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\CarMotion.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\HLSpaceShip.Form1.resources
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\HLSpaceShip.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\CarMotion.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\CarMotion.csproj.CoreCompileInputs.cache

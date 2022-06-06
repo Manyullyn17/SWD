@@ -8,3 +8,4 @@ D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\bin\Debug\WireWorld V1.pdb
 D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld.Properties.Resources.resources
 D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld V1.exe
 D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld V1.pdb
+D:\manue\Manuel\repos\SWD\Game of Life\WireWorld\obj\Debug\WireWorld.csproj.SuggestedBindingRedirects.cache

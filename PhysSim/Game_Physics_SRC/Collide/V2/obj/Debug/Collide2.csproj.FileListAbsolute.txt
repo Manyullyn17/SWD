@@ -1,0 +1,9 @@
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\bin\Debug\Collide2.exe
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\bin\Debug\Collide2.pdb
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\obj\Debug\Collide2.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\obj\Debug\Collide.Collide2Form.resources
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\obj\Debug\Collide.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\obj\Debug\Collide2.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\obj\Debug\Collide2.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\obj\Debug\Collide2.exe
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\V2\obj\Debug\Collide2.pdb
