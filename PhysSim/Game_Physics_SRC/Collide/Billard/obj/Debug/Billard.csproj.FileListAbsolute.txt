@@ -1,0 +1,9 @@
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\bin\Debug\Billard.exe
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\bin\Debug\Billard.pdb
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\obj\Debug\Billard.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\obj\Debug\Collide.Collide3Form.resources
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\obj\Debug\Collide.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\obj\Debug\Billard.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\obj\Debug\Billard.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\obj\Debug\Billard.exe
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\Collide\Billard\obj\Debug\Billard.pdb

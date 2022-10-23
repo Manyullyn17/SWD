@@ -1,26 +1,22 @@
-using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Data;
 using System.Collections;
-using MV;
+using System.Drawing;
+
 
 namespace satellite
 {
-	public class SatelliteWithTrace : Satellite
-	{
+    public class SatelliteWithTrace : Satellite
+    {
         ArrayList m_TracePoints = new ArrayList();
         const int MAX_TRC_POINTS = 500; // 500
         int m_TraceCntr = 0;
-    
-        public SatelliteWithTrace(): base() {}
+
+        public SatelliteWithTrace() : base() { }
 
         public SatelliteWithTrace(Point aPos, Color aCol, double aV, double aDirection)
-          : base(aPos,aCol,aV,aDirection)
-		{
+          : base(aPos, aCol, aV, aDirection)
+        {
+        }
 
-		}
-    
         public override void AddTracePoint()
         {
             m_TraceCntr++;
@@ -34,8 +30,8 @@ namespace satellite
             }
         }
 
-		public override void PaintVisible(Graphics g)
-		{
+        public override void PaintVisible(Graphics g)
+        {
             base.PaintVisible(g);
             DrawPointTrace(g);
         }
@@ -53,13 +49,24 @@ namespace satellite
         private void DrawLineTrace(Graphics g)
         {
             Point pt1, pt2;
-            for (int i = 0; i < m_TracePoints.Count-1; i++)
+            for (int i = 0; i < m_TracePoints.Count - 1; i++)
             {
                 pt1 = (Point)m_TracePoints[i];
-                pt2 = (Point)m_TracePoints[i+1];
+                pt2 = (Point)m_TracePoints[i + 1];
                 g.DrawLine(foregPen, pt1, pt2);
             }
         }
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+

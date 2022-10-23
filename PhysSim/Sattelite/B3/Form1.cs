@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
-// using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using MV;
+using System;
+// using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace satellite
 {
@@ -19,7 +16,7 @@ namespace satellite
             InitializeComponent();
             m_pnl.Init();
             Satellite.SetDefaultColors(this.BackColor, Color.Red);
-            m_Earth = new Satellite(new Point(0,0), Color.Red, 0, 0);
+            m_Earth = new Satellite(new Point(0, 0), Color.Red, 0, 0);
             m_Earth.Radius = 20;
             timer1.Interval = 20; timer1.Start();
             m_ZoomTrk.Value = 100;
@@ -47,7 +44,7 @@ namespace satellite
         {
             m_Earth.PaintVisible(e.Graphics);
             if (m_Sat != null)
-            m_Sat.PaintVisible(e.Graphics);
+                m_Sat.PaintVisible(e.Graphics);
         }
 
         void CalcNextPositions()
@@ -58,18 +55,18 @@ namespace satellite
             {
                 // Vector von der Erde zum Satteliten
                 rVect = m_Earth.VectBetweenObjects(m_Sat);
-        
+
                 rDist = rVect.GetR(); // Abstand  Erde Sattelit
 
                 // rVect auf 1 normiert ( Länge == 1 )
                 rVect = rVect.ScalarMult(1 / rDist);
-        
+
                 // Gravitationsvektor der auf den Sat wirkt m*g/r^2
-                acc = rVect.ScalarMult(Par.EARTH_ACCEL/(rDist*rDist));
-        
+                acc = rVect.ScalarMult(Par.EARTH_ACCEL / (rDist * rDist));
+
                 // Vn+1 = Vn - acc*DT
                 m_Sat.m_V.SubFrom(acc);
-        
+
                 // Xn+1 = Xn + Vn*DT
                 m_Sat.IntegratePosition();
             }
@@ -84,7 +81,7 @@ namespace satellite
                 m_pnl.Invalidate();
             }
         }
-    
+
         void OnStepButt(object sender, EventArgs e)
         {
             m_RunChk.Checked = false;

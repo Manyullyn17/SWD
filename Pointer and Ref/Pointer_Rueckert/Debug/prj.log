@@ -1,0 +1,7 @@
+﻿cl : befehlszeile warning D9035: Die Option "Gm" ist veraltet und wird in einer der nächsten Versionen entfernt.
+  MPointerdemo1.cpp
+D:\SCU1819\SwDev5te\DataStruct\Pointer\MPointerdemo1.cpp(45,13): warning C4305: "=": Verkürzung von "double" in "float"
+D:\SCU1819\SwDev5te\DataStruct\Pointer\MPointerdemo1.cpp(55,15): warning C4305: "=": Verkürzung von "double" in "float"
+D:\SCU1819\SwDev5te\DataStruct\Pointer\MPointerdemo1.cpp(63,23): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+MPointerdemo1.obj : warning LNK4075: /EDITANDCONTINUE wird aufgrund der Angabe von /SAFESEH ignoriert.
+MSVCRTD.lib(gs_cookie.obj) : fatal error LNK1318: Unerwarteter PDB-Fehler: OK (0) "".

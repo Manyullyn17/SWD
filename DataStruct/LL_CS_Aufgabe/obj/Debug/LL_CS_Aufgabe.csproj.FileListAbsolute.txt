@@ -1,0 +1,5 @@
+D:\SCU1819\SwDev5te\DataStruct\LL_CS_Aufgabe\obj\Debug\LL_CS.exe
+D:\SCU1819\SwDev5te\DataStruct\LL_CS_Aufgabe\obj\Debug\LL_CS.pdb
+D:\SCU1819\SwDev5te\DataStruct\LL_CS_Aufgabe\bin\Debug\LL_CS.exe
+D:\SCU1819\SwDev5te\DataStruct\LL_CS_Aufgabe\bin\Debug\LL_CS.pdb
+D:\SCU1819\SwDev5te\DataStruct\LL_CS_Aufgabe\obj\Debug\LL_CS_Aufgabe.csprojResolveAssemblyReference.cache

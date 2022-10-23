@@ -1,58 +1,59 @@
+
 using System;
-using System.Globalization;
 using System.Drawing;
 
 // V3.3
 namespace MV
 {
-	///<summary>2 Dim Vektor und Operationen (Radius, Phi, Add..) für
-	///2 Dim Vektor</summary>
-	public struct Vect2D
-	{
-		#region Member Variablen
-		double m_X, m_Y;	// genaue Koordinaten
-		static Point m_P; // Hilfsvariable
-		const double GRAD_RAD = Math.PI/180.0;
-		const double RAD_GRAD = 180.0/Math.PI;
+    ///<summary>2 Dim Vektor und Operationen (Radius, Phi, Add..) für
+    ///2 Dim Vektor</summary>
+    public struct Vect2D
+    {
+        #region Member Variablen
+        double m_X, m_Y;    // genaue Koordinaten
+        static Point m_P; // Hilfsvariable
+        const double GRAD_RAD = Math.PI / 180.0;
+        const double RAD_GRAD = 180.0 / Math.PI;
         #endregion
-    
-    // aPolar = true/false
+
+        // aPolar = true/false
         public Vect2D(double aX, double aY, bool aPolar)
         {
             if (!aPolar)
             {
                 m_X = aX; m_Y = aY;
             }
-            else {
+            else
+            {
                 m_X = aX * Math.Cos(GRAD_RAD * aY);
                 m_Y = aX * Math.Sin(GRAD_RAD * aY);
             }
         }
 
-		///<summary>X Koordinate in double</summary>
-		public double X
-		{
-			get{ return m_X; }
-			set{ m_X=value; }
-		}
-		
-		///<summary>Y Koordinate in double</summary>
-		public double Y
-		{
-			get{ return m_Y; }
-			set{ m_Y=value; }
-		}
+        ///<summary>X Koordinate in double</summary>
+        public double X
+        {
+            get { return m_X; }
+            set { m_X = value; }
+        }
 
-		///<summary>X Koordinate in int</summary>
-		public int XI
-		{
-			get{ return (int)m_X; }
-		}
-		///<summary>Y Koordinate in int</summary>
-		public int YI
-		{
-			get{ return (int)m_Y; }
-		}
+        ///<summary>Y Koordinate in double</summary>
+        public double Y
+        {
+            get { return m_Y; }
+            set { m_Y = value; }
+        }
+
+        ///<summary>X Koordinate in int</summary>
+        public int XI
+        {
+            get { return (int)m_X; }
+        }
+        ///<summary>Y Koordinate in int</summary>
+        public int YI
+        {
+            get { return (int)m_Y; }
+        }
 
         public float XF
         {
@@ -64,21 +65,24 @@ namespace MV
             get { return (float)m_Y; }
         }
 
-		public Point AsPoint
-		{
-            get {
+        public Point AsPoint
+        {
+
+            get
+            {
                 // Point pt;
                 // if (m_P == null) m_P = new Point();
-                m_P.X=(int)m_X; m_P.Y=(int)m_Y; return m_P;
+                m_P.X = (int)m_X; m_P.Y = (int)m_Y; return m_P;
                 // pt.X = (int)m_X; pt.Y = (int)m_X; return pt;
             }
-		    set {
-			    m_X=value.X; m_Y=value.Y;
-			}
-		}
+            set
+            {
+                m_X = value.X; m_Y = value.Y;
+            }
+        }
 
-		public override string ToString()
-		{
+        public override string ToString()
+        {
             // return String.Format("{0}:{1}", XI, YI);
             // return String.Format("{0};{1}", m_X, m_Y);
             // return String.Format("{0:F1}:{1:F1}", X, Y);
@@ -89,7 +93,7 @@ namespace MV
         {
             Console.WriteLine("{0:F1}:{1:F1}", GetR(), GetPhiGrad());
         }
-    
+
         public void PrintXY()
         {
             Console.WriteLine("{0:F1}:{1:F1}", X, Y);
@@ -101,72 +105,72 @@ namespace MV
             m_Y = aY2 - aY1;
         }
 
-		public void SetXY(double aX, double aY)
-		{ m_X=aX; m_Y=aY; }
+        public void SetXY(double aX, double aY)
+        { m_X = aX; m_Y = aY; }
 
-		public void SetXY(int aX, int aY)
-		{ m_X=aX; m_Y=aY; }
+        public void SetXY(int aX, int aY)
+        { m_X = aX; m_Y = aY; }
 
-		///<summary>Über Polarkoordinate R, Phi setzen</summary>
-		public void SetFrom_R_Phi(double aR, double aPhi)
-		{
-			m_X = aR*Math.Cos(GRAD_RAD*aPhi);
-			m_Y = aR*Math.Sin(GRAD_RAD*aPhi);
-		}
+        ///<summary>Über Polarkoordinate R, Phi setzen</summary>
+        public void SetFrom_R_Phi(double aR, double aPhi)
+        {
+            m_X = aR * Math.Cos(GRAD_RAD * aPhi);
+            m_Y = aR * Math.Sin(GRAD_RAD * aPhi);
+        }
 
-		public double GetPhi()
-		{
-			if( m_X==0.0 && m_Y==0.0 )
-				return 0.0;
-			
-			if( m_X==0.0 )
-			{
-				if( m_Y>0.0 )
-					return Math.PI/2;
-				else
-					return -Math.PI/2;
-			}
-			
-			if( m_Y==0.0 )
-			{
-				if( m_X>0.0 )
-					return 0;
-				else
-					return -Math.PI;
-			}
-			
-			double phi = Math.Abs(Math.Atan(m_Y/m_X));
+        public double GetPhi()
+        {
+            if (m_X == 0.0 && m_Y == 0.0)
+                return 0.0;
 
-			if( m_X>0.0 )
-			{
-				if( m_Y>0 )
-					return Math.Abs(phi);
-				else // m_Y<0.0
-					return -Math.Abs(phi);
-			}
-			else // m_X<0.0
-			{
-				if( m_Y>0 )
-					return Math.PI - Math.Abs(phi);
-				else // m_Y<0.0
-					return -(Math.PI - Math.Abs(phi));
-			}
-		}
+            if (m_X == 0.0)
+            {
+                if (m_Y > 0.0)
+                    return Math.PI / 2;
+                else
+                    return -Math.PI / 2;
+            }
 
-		public double GetPhiGrad() { return RAD_GRAD*GetPhi(); }
+            if (m_Y == 0.0)
+            {
+                if (m_X > 0.0)
+                    return 0;
+                else
+                    return -Math.PI;
+            }
 
-		public double GetR()
-		{
-			return Math.Sqrt(m_X*m_X + m_Y*m_Y);
-		}
+            double phi = Math.Abs(Math.Atan(m_Y / m_X));
+
+            if (m_X > 0.0)
+            {
+                if (m_Y > 0)
+                    return Math.Abs(phi);
+                else // m_Y<0.0
+                    return -Math.Abs(phi);
+            }
+            else // m_X<0.0
+            {
+                if (m_Y > 0)
+                    return Math.PI - Math.Abs(phi);
+                else // m_Y<0.0
+                    return -(Math.PI - Math.Abs(phi));
+            }
+        }
+
+        public double GetPhiGrad() { return RAD_GRAD * GetPhi(); }
+
+        public double GetR()
+        {
+            return Math.Sqrt(m_X * m_X + m_Y * m_Y);
+        }
 
         // Vector verlängern Richtung bleibt gleich
-		    /* public void Add_R(double aR)
-		    {
-			    double r = Math.Sqrt(m_X*m_X + m_Y*m_Y);
-			    r += aR;  double phi=GetPhi();
-			    m_X = r*Math.Cos(phi); m_Y = r*Math.Sin(phi);
-        } */
+        /* public void Add_R(double aR)
+		{
+			double r = Math.Sqrt(m_X*m_X + m_Y*m_Y);
+			r += aR;  double phi=GetPhi();
+			m_X = r*Math.Cos(phi); m_Y = r*Math.Sin(phi);
+    } */
 
         // Vector verlängern Richtung bleibt gleich
         public Vect2D Add_R(double aR)
@@ -176,7 +180,7 @@ namespace MV
             v2 = v1.ScalarMult(aR);
             return this.Add(v2);
         }
-    
+
         public void Add_Phi(double aPhi)
         {
             Vect2D v1;
@@ -189,18 +193,18 @@ namespace MV
         {
             this.Add_Phi(GRAD_RAD * aPhi);
         }
-    
+
         public void Assign(Vect2D aVect)
-		{ 
-            m_X=aVect.m_X; m_Y=aVect.m_Y; 
+        {
+            m_X = aVect.m_X; m_Y = aVect.m_Y;
         }
 
         // this = this + aVect
-		public void AddTo(Vect2D aVect)
-		{
-			m_X = m_X + aVect.m_X;
-			m_Y = m_Y + aVect.m_Y;
-		}
+        public void AddTo(Vect2D aVect)
+        {
+            m_X = m_X + aVect.m_X;
+            m_Y = m_Y + aVect.m_Y;
+        }
 
         public Vect2D Add(Vect2D aVect)
         {
@@ -225,19 +229,19 @@ namespace MV
             v1.m_Y = aVect.m_Y * aFactor;
             return v1;
         }
-    
+
         // this = this + aVect*aFactor
         public void AddTo(Vect2D aVect, double aFactor)
         {
             m_X = m_X + aVect.m_X * aFactor;
             m_Y = m_Y + aVect.m_Y * aFactor;
         }
-		
-		public void SubFrom(Vect2D aVect)
-		{
-			m_X = m_X - aVect.m_X;
-			m_Y = m_Y - aVect.m_Y;
-		}
+
+        public void SubFrom(Vect2D aVect)
+        {
+            m_X = m_X - aVect.m_X;
+            m_Y = m_Y - aVect.m_Y;
+        }
 
         // Vector from aP1 to aP2
         public static Vect2D VectBetweenPoints(Vect2D aP1, Vect2D aP2)
@@ -267,14 +271,14 @@ namespace MV
             v1.m_X = Xres; v1.m_Y = Yres;
             return v1;
         }
-    
+
         public Vect2D GetComplexConjugate()
         {
             Vect2D v1;
             v1.m_X = m_X; v1.m_Y = -m_Y;
             return v1;
         }
-    
+
         public Vect2D ScalarMult(double aFactor)
         {
             Vect2D ret;
@@ -318,21 +322,39 @@ namespace MV
             return ret;
         }
 
-		///<summary>Vektorlänge sqrt(x*x + y*y)</summary>
-		public double VectLength()
-		{ return Math.Sqrt(m_X*m_X + m_Y*m_Y); }
+        ///<summary>Vektorlänge sqrt(x*x + y*y)</summary>
+        public double VectLength()
+        { return Math.Sqrt(m_X * m_X + m_Y * m_Y); }
 
         // Distance between this and aB
         public double DistBetweenPoints(Vect2D aB)
         {
             double xd = m_X - aB.m_X;
             double yd = m_Y - aB.m_Y;
-            return Math.Sqrt(xd*xd + yd*yd);
+            return Math.Sqrt(xd * xd + yd * yd);
         }
-    
+
         public bool IsZero()
         {
             return m_X == 0.0 && m_Y == 0.0;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
