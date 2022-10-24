@@ -1,5 +1,7 @@
 using MV;
+using System;
 using System.Drawing;
+using System.Drawing.Text;
 
 namespace Collide
 {
@@ -7,25 +9,35 @@ namespace Collide
     {
         public Vect2D pos, V;
         public int m;
+        public int num;
         static Pen _pen = new Pen(Color.DarkMagenta, 2);
+        static SolidBrush _brush = new SolidBrush(Color.Black);
+        static Font _font = new Font("Arial", 24, FontStyle.Bold, GraphicsUnit.Pixel);
+        static StringFormat _format = new StringFormat(StringFormatFlags.NoClip);
 
         public Ball()
         {
         }
 
-        public Ball(int aX, int aY)
+        public Ball(int aX, int aY, int aNum)
         {
             pos.SetXY(aX, aY);
+            num = aNum;
         }
 
-        public Ball(Point aP)
+        public Ball(Point aP, int aNum)
         {
             pos.AsPoint = aP;
+            num = aNum;
         }
 
         // Xn+1 = Xn + V*dt
         public void CalcNextPos()
         {
+            if (V.VectLength() > 0.1)
+                V = V.ScalarMult(Par.KR_CALC);
+            else
+                V = V.ScalarMult(Par.KR_CALC/100);
             pos.AddTo(V, Par.DT);
         }
 
@@ -34,12 +46,19 @@ namespace Collide
             return pos.DistBetweenPoints(aB2.pos);
         }
 
-        public void Paint(Graphics gr)
+        public void Paint(Graphics gr, int i)
         {
+            _format.Alignment = StringAlignment.Center;
+            _format.LineAlignment = StringAlignment.Center;
             int xo = Par.BALL_DIAM / 2;
             int w = Par.BALL_DIAM;
-            _pen.Color = Color.Green;
+            Rectangle rect = new Rectangle(pos.XI - xo, pos.YI - xo, w, w);
+            if (i == 0)
+                _pen.Color = Color.Red;
+            else
+                _pen.Color = Color.Green;
             gr.DrawEllipse(_pen, pos.XI - xo, pos.YI - xo, w, w);
+            gr.DrawString(num.ToString(), _font, _brush, rect, _format);
             PaintV1(gr, pos);
         }
 
@@ -51,6 +70,27 @@ namespace Collide
             Vect2D pt2 = pt + V * 15;
             _pen.Color = Color.DarkMagenta;
             gr.DrawLine(_pen, pt2.AsPoint, pt.AsPoint);
+        }
+
+        public bool ReflectInWindow(Size aSz)
+        {
+            if ((pos.X < -aSz.Width/2) && (V.X < 0))
+            { V.X = -V.X; return true; }
+
+            if ((pos.X > aSz.Width/2) && (V.X > 0))
+            { V.X = -V.X; return true; }
+
+            if ((pos.Y < -aSz.Height/2) && (V.Y < 0)) // Par.BALL_DIAM / 2) && (V.Y < 0))
+            { V.Y = -V.Y; return true; }
+
+            if ((pos.Y > aSz.Height/2) && (V.Y > 0))
+            { V.Y = -V.Y; return true; }
+
+            return false;
+        }
+
+        public virtual void WasReflected()
+        {
         }
     }
 
@@ -126,48 +166,69 @@ namespace Collide
 
     public class BallMgr
     {
-        public Ball b1, b2;
+        public Ball[] b = new Ball[11];
         bool didCollide;
+        public Size WndSize;
 
         public void ClearList()
         {
-            b1 = b2 = null;
+            for (int i = 0; i < 11; i++)
+                b[i] = null;
         }
 
         public void ReverseSpeed()
         {
-            b1.V = b1.V.GetOppositeDirection();
-            b2.V = b2.V.GetOppositeDirection();
+            for (int i = 0; i < 11; i++)
+                b[i].V = b[i].V.GetOppositeDirection();
         }
 
         public void CalcNextPositions()
         {
-            if (b1 == null || b2 == null)
-                return;
+            for (int i = 0; i < 11; i++)
+                if (b[i] == null)
+                    return;
+
             for (int i = 1; i < Par.ITER_PER_TICK; i++)
             {
-                b1.CalcNextPos();
-                b2.CalcNextPos();
-
-                if (didCollide && (b1.Distance(b2) < Par.BALL_DIAM + 5))
-                    continue;
-                else
-                    didCollide = false;
-
-                if (b1.Distance(b2) < Par.BALL_DIAM)
+                for (int j = 0; j < 11; j++)
                 {
-                    Collider.Collide1(b1, b2);
-                    didCollide = true;
+                    if (b[j].ReflectInWindow(WndSize))
+                        b[j].WasReflected();
+                    b[j].CalcNextPos();
+                }
+
+                for (int j = 0; j < 10; j++)
+                {
+                    for (int i2 = j + 1; i2 < 11; i2++)
+                    {
+                        if (didCollide && (b[j].Distance(b[i2]) < Par.BALL_DIAM + 5))
+                            continue;
+                        else
+                            didCollide = false;
+                    }
+                }
+
+                for (int j = 0; j < 10; j++)
+                {
+                    for (int i2 = j + 1; i2 < 11; i2++)
+                    {
+                        if (b[j].Distance(b[i2]) < Par.BALL_DIAM)
+                        {
+                            Collider.Collide1(b[j], b[i2]);
+                            didCollide = true;
+                        }
+                    }
                 }
             }
         }
 
         public void Paint(Graphics gr)
         {
-            if (b1 != null)
-                b1.Paint(gr);
-            if (b2 != null)
-                b2.Paint(gr);
+            for (int i = 0; i < 11; i++)
+                if (b[i] != null)
+                {
+                    b[i].Paint(gr, i);
+                }
         }
     }
 }

@@ -3,3 +3,10 @@ D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\HLSpaceSh
 D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\HLSpaceShip.Properties.Resources.resources
 D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\CarMotion.csproj.GenerateResource.cache
 D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\CarMotion.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\bin\Debug\CarMotion.exe.config
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\bin\Debug\CarMotion.exe
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\bin\Debug\CarMotion.pdb
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\bin\Debug\StickControl.dll
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\CarMotion.csproj.CopyComplete
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\CarMotion.exe
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\CarMotion\obj\Debug\CarMotion.pdb
