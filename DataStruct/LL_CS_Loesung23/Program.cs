@@ -66,6 +66,7 @@ namespace LL_CS
             Student missing = new Student("xxx", 0);
             StudentNameCompare cmp = new StudentNameCompare();
 
+            _ll.Print();
             missing.m_Name = "aaa";
             _ll.Remove(_ll.Find(missing, cmp)); _ll.Print();
             missing.m_Name = "ddd";
@@ -78,7 +79,7 @@ namespace LL_CS
 
             StudentCatNrCompare cmp = new StudentCatNrCompare();
 
-            _ll.InsertSorted(new Student("aaa", 70), cmp);
+            _ll.InsertSorted(new Student("aaa", 40), cmp);
             _ll.InsertSorted(new Student("bbb", 30), cmp);
             _ll.InsertSorted(new Student("ccc", 50), cmp);
             _ll.InsertSorted(new Student("ddd", 20), cmp);

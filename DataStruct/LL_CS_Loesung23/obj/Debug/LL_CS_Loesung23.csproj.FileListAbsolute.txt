@@ -20,3 +20,11 @@ C:\Users\manue\Desktop\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_
 C:\Users\manue\Desktop\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_CS_Loesung23.csproj.CoreCompileInputs.cache
 C:\Users\manue\Desktop\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_CS.exe
 C:\Users\manue\Desktop\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_CS.pdb
+D:\manue\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\bin\Debug\LL_CS.exe.config
+D:\manue\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\bin\Debug\LL_CS.exe
+D:\manue\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\bin\Debug\LL_CS.pdb
+D:\manue\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_CS_Loesung23.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_CS_Loesung23.csproj.SuggestedBindingRedirects.cache
+D:\manue\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_CS_Loesung23.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_CS.exe
+D:\manue\Manuel\repos\SWD\DataStruct\LL_CS_Loesung23\obj\Debug\LL_CS.pdb

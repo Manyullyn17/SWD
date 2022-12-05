@@ -187,6 +187,11 @@ namespace LL_CS
             CsLink prev;
             CsLink elem = new CsLink(aObj); // elem ist das einzufügende Element
             iter = prev = _head;
+            if (_head == null)  // Sonderfall Liste leer
+            {
+                _head = _tail = elem;
+                return;
+            }
             while (iter != null)
             {
                 if (aCmp.Compare(iter.data, aObj) > 0)
