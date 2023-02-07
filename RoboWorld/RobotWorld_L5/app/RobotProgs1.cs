@@ -1,4 +1,5 @@
 ﻿using MV;
+using System;
 
 namespace RobotWorld
 {
@@ -103,7 +104,43 @@ namespace RobotWorld
 
         void PrgRasen1()
         {
+            // Am Rand abprallen + an anderen Robotern
+            Vect2D center = new Vect2D(RobotWorld.DblBuffForm.XMax() / 2, RobotWorld.DblBuffForm.YMax() / 2, false);
+            rb.SetV(5);
 
+            while (true)
+            {
+                WaitForUpdate(); WaitForUpdate();
+                double dist = 0;
+                Robot rb2 = RobotMgr.GetNearestInFront(rb, ref dist);
+                Random rand = new Random();
+
+                if ((rb.Pos.XI + -50) < RobotWorld.DblBuffForm.XMin() ||
+                    (rb.Pos.XI + 50) > RobotWorld.DblBuffForm.XMax() ||
+                    (rb.Pos.YI + -50) < RobotWorld.DblBuffForm.YMin() ||
+                    (rb.Pos.YI + 50) > RobotWorld.DblBuffForm.YMax())
+                {
+                    Vect2D diff = rb.Pos - center;
+                    double dir = diff.GetPhiGrad();
+
+                    DriveDistance(-1, 20);
+                    TurnAbsAngle(dir, 10);
+                    if (rand.NextDouble() > 0.5) dir = 180;
+                    else dir = -180;
+
+                    TurnRelAngle(dir + ((rand.NextDouble() - 0.5) * 180), 10);
+                    rb.SetV(5);
+                }
+                else if (rb2 != null)
+                {
+                    if (dist < 50)
+                    {
+                        DriveDistance(-1, 20);
+                        TurnRelAngle(((rand.NextDouble() - 0.5) * 270), 10);
+                        rb.SetV(5);
+                    }
+                }
+            }
         }
 
         void PrgRasen2()
