@@ -4,3 +4,9 @@ D:\SCU1819\SwDev5te\MultiTasking\exa\obj\Debug\prj.csprojAssemblyReference.cache
 D:\SCU1819\SwDev5te\MultiTasking\exa\obj\Debug\prj.csproj.CoreCompileInputs.cache
 D:\SCU1819\SwDev5te\MultiTasking\exa\obj\Debug\prj.exe
 D:\SCU1819\SwDev5te\MultiTasking\exa\obj\Debug\prj.pdb
+C:\Users\manue\Desktop\Manuel\repos\SWD\MultiTasking\exa\bin\Debug\prj.exe
+C:\Users\manue\Desktop\Manuel\repos\SWD\MultiTasking\exa\bin\Debug\prj.pdb
+C:\Users\manue\Desktop\Manuel\repos\SWD\MultiTasking\exa\obj\Debug\prj.csproj.AssemblyReference.cache
+C:\Users\manue\Desktop\Manuel\repos\SWD\MultiTasking\exa\obj\Debug\prj.csproj.CoreCompileInputs.cache
+C:\Users\manue\Desktop\Manuel\repos\SWD\MultiTasking\exa\obj\Debug\prj.exe
+C:\Users\manue\Desktop\Manuel\repos\SWD\MultiTasking\exa\obj\Debug\prj.pdb

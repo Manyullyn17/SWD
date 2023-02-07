@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Text;
 using System.Threading;
 // using System.Runtime.CompilerServices;
 
@@ -24,78 +22,78 @@ using System.Threading;
 
 namespace prj
 {
-  class TwoProducers
-  {
-    int[] buffer = new int[20];
-    int idx;
-    object consSig = new object(); 
-    object mutex = new object();
-    
-    static void Main(string[] args)
+    class TwoProducers
     {
-      TwoProducers m2 = new TwoProducers();
-      m2.MainProg();
-    }
+        int[] buffer = new int[20];
+        int idx;
+        object consSig = new object();
+        object mutex = new object();
 
-    void MainProg()
-    {
-      Thread ta, tb, tc;
-      ta = new Thread(ProducerA); ta.Priority = ThreadPriority.Lowest;
-      tb = new Thread(ProducerB); tb.Priority = ThreadPriority.Lowest;
-      tc = new Thread(Consumer); tc.Priority = ThreadPriority.Highest;
-
-      Console.WriteLine("\nHit Enter to finish.....");
-      ta.Start(); tb.Start(); tc.Start();
-      Console.ReadLine();
-      ta.Abort(); tb.Abort(); tc.Abort();
-      Console.WriteLine("\n");
-    }
-
-    void ProducerA()
-    {
-      while (true)
-      {
-        // lock (mutex)
+        static void Main(string[] args)
         {
-          for (idx = 0; idx < buffer.Length; idx++)
-          {
-            buffer[idx] = idx;
-            Thread.Sleep(5);
-          }
-          lock (consSig)
-          { Monitor.Pulse(consSig); }
+            TwoProducers m2 = new TwoProducers();
+            m2.MainProg();
         }
-      }
-    }
-    
-    void ProducerB()
-    {
-      while (true)
-      {
-        // lock (mutex) 
-        {
-          for (idx = 0; idx < buffer.Length; idx++)
-          {
-            buffer[idx] = idx * 10;
-            Thread.Sleep(10);
-          }
-          lock (consSig)
-          { Monitor.Pulse(consSig); }
-        }
-      }
-    }
 
-    void Consumer()
-    {
-      while (true)
-      {
-        Monitor.Enter(consSig);
-        Monitor.Wait(consSig);
-        for(int i = 0; i < buffer.Length; i++)
-          Console.Write("{0} ", buffer[i]);
-        Console.WriteLine();
-      }
+        void MainProg()
+        {
+            Thread ta, tb, tc;
+            ta = new Thread(ProducerA); ta.Priority = ThreadPriority.Lowest;
+            tb = new Thread(ProducerB); tb.Priority = ThreadPriority.Lowest;
+            tc = new Thread(Consumer); tc.Priority = ThreadPriority.Highest;
+
+            Console.WriteLine("\nHit Enter to finish.....");
+            ta.Start(); tb.Start(); tc.Start();
+            Console.ReadLine();
+            ta.Abort(); tb.Abort(); tc.Abort();
+            Console.WriteLine("\n");
+        }
+
+        void ProducerA()
+        {
+            while (true)
+            {
+                lock (mutex)
+                {
+                    for (idx = 0; idx < buffer.Length; idx++)
+                    {
+                        buffer[idx] = idx;
+                        Thread.Sleep(5);
+                    }
+                    lock (consSig)
+                    { Monitor.Pulse(consSig); }
+                }
+            }
+        }
+
+        void ProducerB()
+        {
+            while (true)
+            {
+                lock (mutex) 
+                {
+                    for (idx = 0; idx < buffer.Length; idx++)
+                    {
+                        buffer[idx] = idx * 10;
+                        Thread.Sleep(10);
+                    }
+                    lock (consSig)
+                    { Monitor.Pulse(consSig); }
+                }
+            }
+        }
+
+        void Consumer()
+        {
+            while (true)
+            {
+                Monitor.Enter(consSig);
+                Monitor.Wait(consSig);
+                for (int i = 0; i < buffer.Length; i++)
+                    Console.Write("{0} ", buffer[i]);
+                Console.WriteLine();
+            }
+        }
+
     }
-  
-  }
 }
