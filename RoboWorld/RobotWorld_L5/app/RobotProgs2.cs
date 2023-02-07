@@ -32,30 +32,38 @@ namespace RobotWorld
 
         void PrgMausZug()
         {
-            // HW
+            WaitForUpdate();
+
             double dist = 0, phiErr = 0;
-            Robot rb2 = RobotMgr.GetNearestInFront(rb, ref dist);
+            Robot rbFront = RobotMgr.GetNearestInFront(rb, ref dist);
 
             Vect2D dir;
 
             while (true)
             {
-                // distanz zw maus und robot
-                dist = RobotProg.mpos.DistBetweenPoints(rb.Pos);
-                rb.SetV(KP_FW * dist);
-
-                // Richtungsvektor robot > maus
-                dir = RobotProg.mpos - rb.Pos;
-                phiErr = dir.DiffAngle(rb.V);
-                rb.Set_dPhi(KP_ANGLE * phiErr);
-
-                // robot 2? idfk
-                dir = rb2.Pos - rb.Pos;
-                phiErr = dir.DiffAngle(rb.V);
-                rb.Set_dPhi(KP_ANGLE * phiErr);
                 WaitForUpdate();
+
+                if (rbFront == null)    // follow mouse if no robot in front
+                {
+                    // distanz zw maus und robot
+                    dist = RobotProg.mpos.DistBetweenPoints(rb.Pos);
+                    rb.SetV(KP_FW * dist);
+
+                    // Richtungsvektor robot > maus
+                    dir = RobotProg.mpos - rb.Pos;
+                    phiErr = dir.DiffAngle(rb.V);
+                    rb.Set_dPhi(KP_ANGLE * phiErr);
+                }
+                else    // follow robot in front
+                {
+                    dist = rb.Pos.DistBetweenPoints(rbFront.Pos);
+                    rb.SetV(KP_FW * dist);
+
+                    dir = rbFront.Pos - rb.Pos;
+                    phiErr = dir.DiffAngle(rb.V);
+                    rb.Set_dPhi(KP_ANGLE * phiErr);
+                }
             }
-            // rb2.Pos
         }
 
         void PrgFollowPoints()

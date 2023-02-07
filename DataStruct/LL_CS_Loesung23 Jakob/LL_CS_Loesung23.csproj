@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="CsLinkedList.cs" />
     <Compile Include="CsLinkedList2.cs" />
+    <Compile Include="DynArray.cs" />
     <Compile Include="IHLContainer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

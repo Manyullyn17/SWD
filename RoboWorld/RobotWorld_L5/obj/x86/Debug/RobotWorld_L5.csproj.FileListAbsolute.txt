@@ -16,3 +16,14 @@ C:\Users\manue\Desktop\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\Ro
 C:\Users\manue\Desktop\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld_L5.csproj.CoreCompileInputs.cache
 C:\Users\manue\Desktop\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld.exe
 C:\Users\manue\Desktop\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld.pdb
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\bin\Debug\RobotWorld.exe.config
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\bin\Debug\RobotWorld.exe
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\bin\Debug\RobotWorld.pdb
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld_L5.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld_L5.csproj.SuggestedBindingRedirects.cache
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld.Form1.resources
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld_L5.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld_L5.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld.exe
+D:\manue\Manuel\repos\SWD\RoboWorld\RobotWorld_L5\obj\x86\Debug\RobotWorld.pdb

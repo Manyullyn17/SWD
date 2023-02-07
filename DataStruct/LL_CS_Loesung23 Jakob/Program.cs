@@ -1,10 +1,13 @@
+
 using System;
+using System.Collections;
+using System.Text;
 
 namespace LL_CS
 {
     class Program
     {
-        CsLinkedList _ll = new CsLinkedList();
+        IHLContainer _ll = new CsArrayList();   //CsLinkedList();
 
         static void Main(string[] args)
         {
@@ -14,29 +17,24 @@ namespace LL_CS
 
         void Test1()
         {
-            // _ll.AddHead("aaa"); _ll.AddHead("bbb"); _ll.AddHead("ccc");
-            for (int i = 1; i < 10; i++)
-                _ll.AddHead(i);
+            _ll.AddHead("aaa"); _ll.AddHead("bbb"); _ll.AddHead("ccc");
+            // for (int i = 1; i <= 5; i++)
+            // _ll.AddHead(i);
             _ll.Print();
 
             // RemoveHead implemetieren und testen
-            for (int i = 0; i < 12; i++)
-            {
-                _ll.RemoveHead(); _ll.Print();
-            }
+            _ll.RemoveHead(); _ll.Print();
+            _ll.RemoveHead(); _ll.Print();
+            _ll.RemoveHead(); _ll.Print();
+            _ll.RemoveHead(); _ll.Print();
         }
 
         void Test2()
         {
-            //_ll.AddTail("i"); _ll.AddTail("love"); _ll.AddTail("niggers");
-            for (int i = 0; i < 10; i++)
-                _ll.AddTail(i);
+            _ll.AddTail("i"); _ll.AddTail("hate"); _ll.AddTail("niggers");
             _ll.Print();
-
-            for (int i = 0; i < 12; i++)
-            {
-                _ll.RemoveTail(); _ll.Print();
-            }
+            Console.WriteLine(_ll.RemoveTail());
+            _ll.Print();
         }
 
         void Test3()
@@ -46,14 +44,15 @@ namespace LL_CS
             _ll.AddTail(new Student("ccc", 40));
             _ll.AddTail(new Student("ddd", 50));
 
-            Student missing = new Student("ccc", 0);
+            Student toFind = new Student("bbb", 0);
             StudentNameCompare cmp = new StudentNameCompare();
+            Student ret = (Student)_ll.Find(toFind, cmp);
 
-            Student found = (Student)_ll.Find(missing, cmp);
-            if (found == null)
-                Console.WriteLine("Not Found");
-            else
-                Console.WriteLine("Found {0}", found);
+            if (ret == null)
+            {
+                Console.WriteLine("Not found!");
+            }
+            else Console.WriteLine("Found {0}", ret);
         }
 
         void Test4()
@@ -63,34 +62,32 @@ namespace LL_CS
             _ll.AddTail(new Student("ccc", 40));
             _ll.AddTail(new Student("ddd", 50));
 
-            Student missing = new Student("xxx", 0);
+            Student toFind = new Student("xxx", 0);
             StudentNameCompare cmp = new StudentNameCompare();
 
-            _ll.Print();
-            missing.m_Name = "aaa";
-            _ll.Remove(_ll.Find(missing, cmp)); _ll.Print();
-            missing.m_Name = "ddd";
-            _ll.Remove(_ll.Find(missing, cmp)); _ll.Print();
+            toFind.m_Name = "ccc";
+            Console.WriteLine(_ll.Remove(_ll.Find(toFind, cmp))); _ll.Print();
+
+            toFind.m_Name = "ddd";
+            Console.WriteLine(_ll.Remove(_ll.Find(toFind, cmp))); _ll.Print();
         }
 
         void Test5()
         {
-            // InsertSorted testen
-
             StudentCatNrCompare cmp = new StudentCatNrCompare();
-
-            _ll.InsertSorted(new Student("aaa", 40), cmp);
+            _ll.InsertSorted(new Student("ddd", 20), cmp);
+            _ll.InsertSorted(new Student("aaa", 70), cmp);
+            _ll.InsertSorted(new Student("aaa", 70), cmp);
             _ll.InsertSorted(new Student("bbb", 30), cmp);
             _ll.InsertSorted(new Student("ccc", 50), cmp);
             _ll.InsertSorted(new Student("ddd", 20), cmp);
 
-            _ll.Print();
-            // Liste soll nach CatNr sortiert sein
+            _ll.Print(); // Liste müsste nach Kat-Nr. sortiert sein.
         }
 
         void Test6()
         {
-            for (int i = 1; i <= 20; i++)
+            for(int i = 1; i <= 20; i++)
             {
                 _ll.AddTail(i);
             }
