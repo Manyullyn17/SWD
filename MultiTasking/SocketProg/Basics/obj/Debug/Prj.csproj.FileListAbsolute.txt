@@ -1,0 +1,11 @@
+D:\SCU1819\SwDev5te\MultiTasking\SocketProg\Basics\bin\Debug\CliServ3.exe
+D:\SCU1819\SwDev5te\MultiTasking\SocketProg\Basics\bin\Debug\CliServ3.pdb
+D:\SCU1819\SwDev5te\MultiTasking\SocketProg\Basics\obj\Debug\CliServ3.exe
+D:\SCU1819\SwDev5te\MultiTasking\SocketProg\Basics\obj\Debug\CliServ3.pdb
+D:\SCU1819\SwDev5te\MultiTasking\SocketProg\Basics\obj\Debug\Prj.csprojResolveAssemblyReference.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\SocketProg\Basics\bin\Debug\CliServ3.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\SocketProg\Basics\bin\Debug\CliServ3.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\SocketProg\Basics\obj\Debug\Prj.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\SocketProg\Basics\obj\Debug\Prj.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\SocketProg\Basics\obj\Debug\CliServ3.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\SocketProg\Basics\obj\Debug\CliServ3.pdb
