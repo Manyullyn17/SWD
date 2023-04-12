@@ -1,0 +1,17 @@
+D:\SCU1819\SwDev5te\MultiTasking\WordProcTmpl\bin\Debug\WordProc.exe
+D:\SCU1819\SwDev5te\MultiTasking\WordProcTmpl\bin\Debug\WordProc.pdb
+D:\SCU1819\SwDev5te\MultiTasking\WordProcTmpl\obj\x86\Debug\WordProc.csprojResolveAssemblyReference.cache
+D:\SCU1819\SwDev5te\MultiTasking\WordProcTmpl\obj\x86\Debug\WordProc.Form1.resources
+D:\SCU1819\SwDev5te\MultiTasking\WordProcTmpl\obj\x86\Debug\WordProc.Properties.Resources.resources
+D:\SCU1819\SwDev5te\MultiTasking\WordProcTmpl\obj\x86\Debug\WordProc.csproj.GenerateResource.Cache
+D:\SCU1819\SwDev5te\MultiTasking\WordProcTmpl\obj\x86\Debug\WordProc.exe
+D:\SCU1819\SwDev5te\MultiTasking\WordProcTmpl\obj\x86\Debug\WordProc.pdb
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\bin\Debug\WordProc.exe
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\bin\Debug\WordProc.pdb
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.csprojAssemblyReference.cache
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.Form1.resources
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.Properties.Resources.resources
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.csproj.GenerateResource.cache
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.csproj.CoreCompileInputs.cache
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.exe
+C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.pdb
