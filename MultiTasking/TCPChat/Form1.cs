@@ -1,266 +1,263 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
 
-using System.Net;
-using System.Net.Sockets;
-using System.Threading;
-using System.IO;
-
-namespace SWNW_TCPChat
+namespace TCPChat
 {
-    public delegate void StoUI_startSuccess_DELEGATE_t();
-    public delegate void StoUI_serverEnd_DELEGATE_t(string message);
-    public delegate void CtoUI_connectSuccess_DELEGATE_t();
-    public delegate void CtoUI_connectionEnd_DELEGATE_t(string message);
+    public delegate void ServerToUI_startSuccess_DELEGATE_t();
+    public delegate void ServerToUI_serverEnd_DELEGATE_t(string message);
+    public delegate void ClientToUI_connectSuccess_DELEGATE_t();
+    public delegate void ClientToUI_connectionEnd_DELEGATE_t(string message);
     public delegate void CStoUI_receivedMessage_DELEGATE_t(string from, string message);
     public delegate void CStoUI_clientListUpdate_DELEGATE_t(string[] clients);
 
     public partial class Form1 : Form
     {
         public static Form1 frm;
-        StoUI_startSuccess_DELEGATE_t f_StoUI_startSuccess_DELEGATE;
-        StoUI_serverEnd_DELEGATE_t f_StoUI_serverEnd_DELEGATE;
-        CtoUI_connectSuccess_DELEGATE_t f_CtoUI_connectSuccess_DELEGATE;
-        CtoUI_connectionEnd_DELEGATE_t f_CtoUI_connectionEnd_DELEGATE;
+        ServerToUI_startSuccess_DELEGATE_t f_ServerToUI_startSuccess_DELEGATE;
+        ServerToUI_serverEnd_DELEGATE_t f_ServerToUI_serverEnd_DELEGATE;
+        ClientToUI_connectSuccess_DELEGATE_t f_ClientToUI_connectSuccess_DELEGATE;
+        ClientToUI_connectionEnd_DELEGATE_t f_ClientTUI_connectionEnd_DELEGATE;
         CStoUI_receivedMessage_DELEGATE_t f_CStoUI_receivedMessage_DELEGATE;
         CStoUI_clientListUpdate_DELEGATE_t f_CStoUI_clientListUpdate_DELEGATE;
 
-        CCClient m_client = null;
+        CClient m_client = null;
         CServer m_server = null;
 
         public Form1()
         {
             InitializeComponent();
             frm = this;
-            f_StoUI_startSuccess_DELEGATE = StoUI_startSuccess_DELEGATE;
-            f_StoUI_serverEnd_DELEGATE = StoUI_serverEnd_DELEGATE;
-            f_CtoUI_connectSuccess_DELEGATE = CtoUI_connectSuccess_DELEGATE;
-            f_CtoUI_connectionEnd_DELEGATE = CtoUI_connectionEnd_DELEGATE;
+            f_ServerToUI_startSuccess_DELEGATE = ServerToUI_startSuccess_DELEGATE;
+            f_ServerToUI_serverEnd_DELEGATE = ServerToUI_serverEnd_DELEGATE;
+            f_ClientToUI_connectSuccess_DELEGATE = ClientToUI_connectSuccess_DELEGATE;
+            f_ClientTUI_connectionEnd_DELEGATE = ClientToUI_connectionEnd_DELEGATE;
             f_CStoUI_receivedMessage_DELEGATE = CStoUI_receivedMessage_DELEGATE;
             f_CStoUI_clientListUpdate_DELEGATE = CStoUI_clientListUpdate_DELEGATE;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            u_chatView.Columns.Add("User", u_chatView.Width / 5);
-            u_chatView.Columns.Add("Message", (u_chatView.Width / 5) * 4);
-            u_chatView.View = View.Details;
+            chatView.Columns.Add("User", chatView.Width / 5);
+            chatView.Columns.Add("Message", (chatView.Width / 5) * 4);
+            chatView.View = View.Details;
 
-            u_userView.Columns.Add("User", u_userView.Width - 5);
-            u_userView.View = View.Details;
+            userView.Columns.Add("User", userView.Width - 5);
+            userView.View = View.Details;
 
-            u_usernameBox.AppendText(new Random().Next(1, 100).ToString());
+            usernameBox.AppendText(new Random().Next(1, 100).ToString());
         }
 
-        private void startServer()
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            IPHostEntry host = Dns.GetHostEntry(u_ipBox.Text);
-            int port = Convert.ToInt32(u_portBox.Text);
-            m_server = new CServer(host.AddressList[1], (ushort)port);
+            if (m_server != null) StopServer();
+            if (m_client != null) StopClient();
         }
 
-        private void startClient()
+        private void StartServer()
         {
-            IPHostEntry host = Dns.GetHostEntry(u_ipBox.Text);
-            int port = Convert.ToInt32(u_portBox.Text);
-            string username = u_usernameBox.Text;
-            m_client = new CCClient(host.AddressList[1], (ushort)port, username);
+            if (!IPAddress.TryParse(ipBox.Text, out IPAddress ip))  // check if IPAddress is valid
+                ip = IPAddress.Parse("127.0.0.1");                  // set default IPAddress
+            ushort port = Convert.ToUInt16(portBox.Text);
+            m_server = new CServer(ip, port);
         }
 
-        private void stopServer()
+        private void StopServer()
         {
-            m_server.taskQueue.put(new CTask(CWhatToDo.sTerminate));
+            m_server.taskQueue.Put(new CTask(CWhatToDo.sTerminate));
         }
 
-        private void stopClient()
+        private void StartClient()
         {
-            m_client.taskQueue.put(new CTask(CWhatToDo.cTerminate));
+            if (!IPAddress.TryParse(ipBox.Text, out IPAddress ip))  // check if IPAddress is valid
+                ip = IPAddress.Parse("127.0.0.1");                  // set default IPAddress
+            ushort port = Convert.ToUInt16(portBox.Text);
+            string username = usernameBox.Text;
+            m_client = new CClient(ip, port, username);
         }
 
-        private void on_u_connectBtn_click(object sender, EventArgs e)
+        private void StopClient()
         {
-            if(u_connectBtn.Text == "Connect")
+            m_client.taskQueue.Put(new CTask(CWhatToDo.cTerminate));
+        }
+
+        private void On_serverBtn_checkedChanged(object sender, EventArgs e)
+        {
+            if (!serverBtn.Checked)
+                usernameBox.Enabled = true;
+            else
+                usernameBox.Enabled = false;
+        }
+
+        private void On_connectBtn_click(object sender, EventArgs e)
+        {
+            if (connectBtn.Text == "Connect")
             {
-                if(u_servBtn.Checked) startServer();
-                else startClient();
+                if (serverBtn.Checked) StartServer();
+                else StartClient();
             }
             else    // Disconnect
             {
-                if(u_servBtn.Checked) stopServer();
-                else stopClient();
+                if (serverBtn.Checked) StopServer();
+                else StopClient();
             }
         }
 
-        private void on_u_inputBox_keyDown(object sender, KeyEventArgs e)
+        private void On_sendBtn_click(object sender, EventArgs e)
         {
-            // so machen, dass ENTER ebenso die Nachricht sendet.
-            if(e.KeyCode == Keys.Enter)
+            m_client.taskQueue.Put(new CTask(CWhatToDo.cSendMessage, inputBox.Text));
+            inputBox.Clear();
+        }
+
+        private void On_inputBox_keyDown(object sender, KeyEventArgs e)
+        {
+            // send text when enter is pressed
+            if (e.KeyCode == Keys.Enter)
             {
-                m_client.taskQueue.put(new CTask(CWhatToDo.cSendMessage, u_inputBox.Text));
-                u_inputBox.Text = "";
+                On_sendBtn_click(sender, e);
+
+                // suppress "ding" when enter is pressed
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 
-        private void on_u_sendBtn_click(object sender, EventArgs e)
+        private void ServerToUI_startSuccess_DELEGATE()
         {
-            m_client.taskQueue.put(new CTask(CWhatToDo.cSendMessage, u_inputBox.Text));
-            u_inputBox.Text = "";
+            chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", "Server started!" }));
+            chatView.Items[chatView.Items.Count - 1].EnsureVisible();
+
+            connectBtn.Text = "Disconnect";
+            ipBox.Enabled = false;
+            portBox.Enabled = false;
+            serverBtn.Enabled = false;
+            clientBtn.Enabled = false;
+            usernameBox.Enabled = false;
+            inputBox.Enabled = false;
+            sendBtn.Enabled = false;
         }
 
-        private void StoUI_startSuccess_DELEGATE()
+        public void ServerToUI_startSuccess()
         {
-            u_chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", "Server started!" }));
-            u_chatView.Items[u_chatView.Items.Count - 1].EnsureVisible();
-
-            u_connectBtn.Text = "Disconnect";
-            u_ipBox.Enabled = false;
-            u_portBox.Enabled = false;
-            u_servBtn.Enabled = false;
-            u_clientBtn.Enabled = false;
-            u_usernameBox.Enabled = false;
-            u_inputBox.Enabled = false;
-            u_sendBtn.Enabled = false;
+            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> ServerToUI_startSuccess_DELEGATE
+            BeginInvoke(f_ServerToUI_startSuccess_DELEGATE);
         }
 
-        public void StoUI_startSuccess()
+        private void ServerToUI_serverEnd_DELEGATE(string message)
         {
-            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> StoUI_startSuccess_DELEGATE
-            BeginInvoke(f_StoUI_startSuccess_DELEGATE);
-        }
+            chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", message }));
+            chatView.Items[chatView.Items.Count - 1].EnsureVisible();
 
-        private void StoUI_serverEnd_DELEGATE(string message)
-        {
-            u_chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", message }));
-            u_chatView.Items[u_chatView.Items.Count - 1].EnsureVisible();
-
-            u_connectBtn.Text = "Connect";
-            u_ipBox.Enabled = true;
-            u_portBox.Enabled = true;
-            u_servBtn.Enabled = true;
-            u_clientBtn.Enabled = true;
-            u_usernameBox.Enabled = false;
-            u_inputBox.Enabled = false;
-            u_sendBtn.Enabled = false;
-            u_userView.Items.Clear();
+            connectBtn.Text = "Connect";
+            ipBox.Enabled = true;
+            portBox.Enabled = true;
+            serverBtn.Enabled = true;
+            clientBtn.Enabled = true;
+            usernameBox.Enabled = false;
+            inputBox.Enabled = false;
+            sendBtn.Enabled = false;
+            userView.Items.Clear();
 
             m_server = null;
         }
 
-        public void StoUI_serverEnd(string message)
+        public void ServerToUI_serverEnd(string message)
         {
-            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> StoUI_serverEnd_DELEGATE
-            BeginInvoke(f_StoUI_serverEnd_DELEGATE, new object[] { message });
+            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> ServerToUI_serverEnd_DELEGATE
+            BeginInvoke(f_ServerToUI_serverEnd_DELEGATE, new object[] { message });
         }
 
-        private void CtoUI_connectSuccess_DELEGATE()
+        private void ClientToUI_connectSuccess_DELEGATE()
         {
-            u_chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", "Connected!" }));
-            u_chatView.Items[u_chatView.Items.Count - 1].EnsureVisible();
+            chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", "Connected!" }));
+            chatView.Items[chatView.Items.Count - 1].EnsureVisible();
 
-            u_connectBtn.Text = "Disconnect";
-            u_ipBox.Enabled = false;
-            u_portBox.Enabled = false;
-            u_servBtn.Enabled = false;
-            u_clientBtn.Enabled = false;
-            u_usernameBox.Enabled = false;
-            u_inputBox.Enabled = true;
-            u_sendBtn.Enabled = true;
+            connectBtn.Text = "Disconnect";
+            ipBox.Enabled = false;
+            portBox.Enabled = false;
+            serverBtn.Enabled = false;
+            clientBtn.Enabled = false;
+            usernameBox.Enabled = false;
+            inputBox.Enabled = true;
+            sendBtn.Enabled = true;
         }
 
-        public void CtoUI_connectSuccess()
+        public void ClientToUI_connectSuccess()
         {
-            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> CtoUI_connectSuccess_DELEGATE
-            BeginInvoke(f_CtoUI_connectSuccess_DELEGATE);
+            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> ClientToUI_connectSuccess_DELEGATE
+            BeginInvoke(f_ClientToUI_connectSuccess_DELEGATE);
         }
 
-        private void CtoUI_connectionEnd_DELEGATE(string message)
+        private void ClientToUI_connectionEnd_DELEGATE(string message)
         {
-            u_chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", message }));
-            u_chatView.Items[u_chatView.Items.Count - 1].EnsureVisible();
+            chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", message }));
+            chatView.Items[chatView.Items.Count - 1].EnsureVisible();
 
-            u_connectBtn.Text = "Connect";
-            u_ipBox.Enabled = true;
-            u_portBox.Enabled = true;
-            u_servBtn.Enabled = true;
-            u_clientBtn.Enabled = true;
-            u_usernameBox.Enabled = true;
-            u_inputBox.Enabled = false;
-            u_sendBtn.Enabled = false;
-            u_userView.Items.Clear();
+            connectBtn.Text = "Connect";
+            ipBox.Enabled = true;
+            portBox.Enabled = true;
+            serverBtn.Enabled = true;
+            clientBtn.Enabled = true;
+            usernameBox.Enabled = true;
+            inputBox.Enabled = false;
+            sendBtn.Enabled = false;
+            userView.Items.Clear();
 
             m_client = null;
         }
 
-        public void CtoUI_connectionEnd(string message)
+        public void ClientToUI_connectionEnd(string message)
         {
-            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> CtoUI_connectionEnd_DELEGATE
-            BeginInvoke(f_CtoUI_connectionEnd_DELEGATE, new object[] { message });
+            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> lientTUI_connectionEnd_DELEGATE
+            BeginInvoke(f_ClientTUI_connectionEnd_DELEGATE, new object[] { message });
         }
 
         private void CStoUI_receivedMessage_DELEGATE(string from, string message)
         {
-            u_chatView.Items.Add(new ListViewItem(new string[] { from + ":", message }));
-            u_chatView.Items[u_chatView.Items.Count - 1].EnsureVisible();
+            chatView.Items.Add(new ListViewItem(new string[] { from, message }));
+            chatView.Items[chatView.Items.Count - 1].EnsureVisible();
         }
 
         public void CStoUI_receivedMessage(string from, string message)
         {
-            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> StoUI_receivedMessage_DELEGATE
+            // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> CStoUI_receivedMessage_DELEGATE
             BeginInvoke(f_CStoUI_receivedMessage_DELEGATE, new object[] { from, message });
         }
 
         private void CStoUI_clientListUpdate_DELEGATE(string[] clients)
         {
-            if (clients.Length > u_userView.Items.Count)
+            if (clients.Length > userView.Items.Count)
             {
-                // neuer User
-                u_chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", clients.Last() + " joined!" }));
+                // new User
+                chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", clients.Last() + " joined!" }));
             }
             else
             {
-                // Nutzer hat verlassen, den suchen, der verlassen hat:
-                foreach (ListViewItem l in u_userView.Items)
+                // find User that left
+                foreach (ListViewItem l in userView.Items)
                 {
                     if (!clients.Contains(l.Text))
                     {
-                        u_chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", l.Text + " left!" }));
+                        chatView.Items.Add(new ListViewItem(new string[] { "<INFO>", l.Text + " left!" }));
                     }
                 }
 
             }
 
-            u_userView.Items.Clear();
+            userView.Items.Clear();
             foreach (string c in clients)
             {
-                u_userView.Items.Add(new ListViewItem(c));
+                userView.Items.Add(new ListViewItem(c));
             }
 
-            u_chatView.Items[u_chatView.Items.Count - 1].EnsureVisible();
+            chatView.Items[chatView.Items.Count - 1].EnsureVisible();
         }
 
         public void CStoUI_clientListUpdate(string[] clients)
         {
             // WICHTIG: MUSS HIER DELEGATE MACHEN!!! -> CStoUI_clientListUpdate_DELEGATE
             BeginInvoke(f_CStoUI_clientListUpdate_DELEGATE, new object[] { clients });
-        }
-
-        private void on_u_servBtn_checkedChanged(object sender, EventArgs e)
-        {
-            if (!u_servBtn.Checked) u_usernameBox.Enabled = true;
-            else u_usernameBox.Enabled = false;
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (m_server != null) stopServer();
-            if (m_client != null) stopClient();
         }
     }
 }

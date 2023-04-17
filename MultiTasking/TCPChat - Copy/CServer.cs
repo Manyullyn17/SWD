@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Windows.Forms;
 
-namespace TCPChat
+namespace SWNW_TCPChat
 {
     class CServer
     {
@@ -30,35 +34,35 @@ namespace TCPChat
             try
             {
                 m_server.Start();
-                m_server.BeginAcceptTcpClient(new AsyncCallback(OnAcceptTcpClientCB), m_server);
+                m_server.BeginAcceptTcpClient(new AsyncCallback(onAcceptTcpClientCB), m_server);
             }
             catch (Exception e)
             {
-                Form1.frm.ServerToUI_serverEnd("Could not start Server!");
+                Form1.frm.StoUI_serverEnd("Could not bind to IP/Port!");
                 return;
             }
 
-            m_TTasks = new Thread(TaskT);
+            m_TTasks = new Thread(taskT);
             m_TTasks.Start();
         }
 
-        private void TaskT()
+        private void taskT()
         {
-            Form1.frm.ServerToUI_startSuccess();
+            Form1.frm.StoUI_startSuccess();
 
             while (true)
             {
-                CTask task = taskQueue.Get();
+                CTask task = taskQueue.get();
                 switch (task.task)
                 {
                     case CWhatToDo.sTerminate:
                         {
-                            foreach (CSClient c in m_clients)
+                            foreach(CSClient c in m_clients)
                             {
-                                c.taskQueue.Put(new CTask(CWhatToDo.scTerminate));
+                                c.taskQueue.put(new CTask(CWhatToDo.scTerminate));
                             }
-                            Form1.frm.ServerToUI_serverEnd("Server Closed!");
-                            Terminate();
+                            Form1.frm.StoUI_serverEnd("Server Closed!");
+                            terminate();
                             break;
                         }
                     case CWhatToDo.sStoreClient:
@@ -67,14 +71,14 @@ namespace TCPChat
                             m_clients.Add((CSClient)task.sender);
 
                             List<string> clientList = new List<string>();
-                            foreach (CSClient c in m_clients)
+                            foreach(CSClient c in m_clients)
                             {
                                 clientList.Add(c.username);
                             }
                             CTask tsk = new CTask(CWhatToDo.scSendClientList, clientList.ToArray());
                             foreach (CSClient c in m_clients)
                             {
-                                c.taskQueue.Put(tsk);
+                                c.taskQueue.put(tsk);
                             }
                             Form1.frm.CStoUI_clientListUpdate(clientList.ToArray());
                             break;
@@ -92,7 +96,7 @@ namespace TCPChat
                             CTask tsk = new CTask(CWhatToDo.scSendClientList, clientList.ToArray());
                             foreach (CSClient c in m_clients)
                             {
-                                c.taskQueue.Put(tsk);
+                                c.taskQueue.put(tsk);
                             }
                             Form1.frm.CStoUI_clientListUpdate(clientList.ToArray());
                             break;
@@ -100,10 +104,10 @@ namespace TCPChat
                     case CWhatToDo.sForwardMessage:
                         {
                             CTask tsk = new CTask(CWhatToDo.scSendMessage, task.data, task.sender);
-                            foreach (CSClient c in m_clients)
+                            foreach(CSClient c in m_clients)
                             {
                                 if (c == (CSClient)task.sender) continue;
-                                c.taskQueue.Put(tsk);
+                                c.taskQueue.put(tsk);
                             }
                             Form1.frm.CStoUI_receivedMessage(((CSClient)task.sender).username, (string)task.data);
                             break;
@@ -113,17 +117,17 @@ namespace TCPChat
             }
         }
 
-        private void OnAcceptTcpClientCB(IAsyncResult ar)
+        private void onAcceptTcpClientCB(IAsyncResult ar)
         {
-            TcpClient newClient = m_server.EndAcceptTcpClient(ar);
+            TcpClient newClient = m_server.EndAcceptTcpClient(ar);  //m_server evtl noch locken???
             System.Console.WriteLine("Client connected!");
 
             new CSClient(this, newClient);
 
-            m_server.BeginAcceptTcpClient(new AsyncCallback(OnAcceptTcpClientCB), m_server);
+            m_server.BeginAcceptTcpClient(new AsyncCallback(onAcceptTcpClientCB), m_server);
         }
 
-        private void Terminate()
+        private void terminate()
         {
             m_TTasks.Abort();
             m_TTasks.Join();
@@ -133,7 +137,7 @@ namespace TCPChat
 
         ~CServer()
         {
-            Terminate();
+            terminate();
         }
     }
 }

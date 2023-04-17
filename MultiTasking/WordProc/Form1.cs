@@ -39,7 +39,6 @@ namespace WordProc
         {
             // An den Worker Text übergeben und
             // dem Worker die Start-Nachricht schicken
-            // _txtBox1.Text;
             wrp.inTxt = _txtBox1.Text;
             wrp.mbx.Put(1);
         }

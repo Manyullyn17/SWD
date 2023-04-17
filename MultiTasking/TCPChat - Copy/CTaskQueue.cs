@@ -1,7 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using System.Threading.Tasks;
 using System.Threading;
 
-namespace TCPChat
+namespace SWNW_TCPChat
 {
     enum CWhatToDo
     {
@@ -41,18 +46,18 @@ namespace TCPChat
         {
             m_queue = new Queue<CTask>();
         }
-        public void Put(CTask task)
+        public void put(CTask task)
         {
             Monitor.Enter(m_queue);
             m_queue.Enqueue(task);
             Monitor.Pulse(m_queue);
             Monitor.Exit(m_queue);
         }
-
-        public CTask Get()
+        
+        public CTask get()
         {
             Monitor.Enter(m_queue);
-            if (m_queue.Count == 0) Monitor.Wait(m_queue);   // Wenn queue leer ist warten; ansonsten direkt weitermachen
+            if(m_queue.Count == 0) Monitor.Wait(m_queue);   // Wenn queue leer ist warten; ansonsten direkt weitermachen
             CTask task = m_queue.Dequeue();
             Monitor.Exit(m_queue);
             return task;

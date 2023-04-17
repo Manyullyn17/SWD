@@ -1,0 +1,21 @@
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\obj\Debug\SWNW_TCPChat.csprojAssemblyReference.cache
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\obj\Debug\SWNW_TCPChat.Form1.resources
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\obj\Debug\SWNW_TCPChat_T2.Properties.Resources.resources
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\obj\Debug\SWNW_TCPChat.csproj.GenerateResource.cache
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\obj\Debug\SWNW_TCPChat.csproj.CoreCompileInputs.cache
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\bin\Debug\SWNW_TCPChat_T2.exe.config
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\bin\Debug\SWNW_TCPChat_T2.exe
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\bin\Debug\SWNW_TCPChat_T2.pdb
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\obj\Debug\SWNW_TCPChat_T2.exe
+C:\Users\Jakob Klausbauer\source\repos\SWNW_TCPChat_T2\obj\Debug\SWNW_TCPChat_T2.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\bin\Debug\SWNW_TCPChat_T2.exe.config
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\bin\Debug\SWNW_TCPChat_T2.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\bin\Debug\SWNW_TCPChat_T2.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\SWNW_TCPChat.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\SWNW_TCPChat.csproj.SuggestedBindingRedirects.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\SWNW_TCPChat.Form1.resources
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\SWNW_TCPChat_T2.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\SWNW_TCPChat.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\SWNW_TCPChat.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\SWNW_TCPChat_T2.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\SWNW_TCPChat_T2.pdb

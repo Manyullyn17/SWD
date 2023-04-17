@@ -15,3 +15,14 @@ C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\Word
 C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.csproj.CoreCompileInputs.cache
 C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.exe
 C:\Users\Jakob Klausbauer\Downloads\WordProcTmpl\WordProcTmpl\obj\x86\Debug\WordProc.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\bin\Debug\WordProc.exe.config
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\bin\Debug\WordProc.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\bin\Debug\WordProc.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\obj\x86\Debug\WordProc.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\obj\x86\Debug\WordProc.csproj.SuggestedBindingRedirects.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\obj\x86\Debug\WordProc.Form1.resources
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\obj\x86\Debug\WordProc.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\obj\x86\Debug\WordProc.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\obj\x86\Debug\WordProc.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\obj\x86\Debug\WordProc.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\WordProc\obj\x86\Debug\WordProc.pdb

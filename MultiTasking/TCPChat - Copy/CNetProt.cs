@@ -1,9 +1,14 @@
 ﻿using System;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace TCPChat
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
+namespace SWNW_TCPChat
 {
     // Übertragung von Daten via TCP erfolgt durch senden der serialisierten CNetPacket-Struktur via Base64-String
     enum CNetTopic : short
@@ -50,7 +55,7 @@ namespace TCPChat
             byte[] raw = Convert.FromBase64String(objStr);
             MemoryStream str = new MemoryStream(raw);
             CNetPacket obj = (CNetPacket)frmt.Deserialize(str);
-
+            
             topic = obj.topic;
             data = obj.data;
         }

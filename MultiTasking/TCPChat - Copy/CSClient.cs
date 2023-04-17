@@ -1,10 +1,15 @@
 ﻿using System;
-using System.IO;
-using System.Net.Sockets;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 
-namespace TCPChat
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+using System.IO;
+
+namespace SWNW_TCPChat
 {
     class CSClient
     {
@@ -26,17 +31,17 @@ namespace TCPChat
             m_buff = new byte[4096];
 
             taskQueue = new CTaskQueue();
-            m_TTasks = new Thread(TaskT);
+            m_TTasks = new Thread(taskT);
             m_TTasks.Start();
         }
 
-        private void TaskT()
-        {
+        private void taskT()
+        {   
             StreamReader rdr = new StreamReader(m_netStr);
             StreamWriter wrtr = new StreamWriter(m_netStr);
             #region onboarding
-            // get Username
-            m_sock.ReceiveTimeout = 1000;   // time for Client to send name in ms
+            // Nutzernamen empfangen
+            m_sock.ReceiveTimeout = 1000;   // Client hat eine Sekunde Zeit, seinen Namen bekannzugeben
             StringBuilder name = new StringBuilder();
 
             try
@@ -56,29 +61,29 @@ namespace TCPChat
 
             if (name.Length == 0 || name.Length > 50)
             {
-                // invalid name or timeout, abort
-                Console.WriteLine("Failed to retrieve username or too long. Onboarding failed, aborting...");
-                Terminate();
+                // Ungültiger Name oder Timeout, abbrechen und zerstören (bzw server NICHT instruieren, client zu speichern)
+                Console.WriteLine("Failed to retrieve username from client/too long; Onboarding failed, aborting...");
+                terminate();
             }
 
             username = name.ToString();
             Console.WriteLine("New User connected Successfully! Username: {0}", username);
-            m_server.taskQueue.Put(new CTask(CWhatToDo.sStoreClient, null, this));
+            m_server.taskQueue.put(new CTask(CWhatToDo.sStoreClient, null, this));
             #endregion onboarding
 
-            m_netStr.BeginRead(m_buff, 0, m_buff.Length, OnTcpReadCB, m_netStr);
-
+            m_netStr.BeginRead(m_buff, 0, m_buff.Length, onTcpReadCB, m_netStr);
+            
             while (true)
             {
-                CTask task = taskQueue.Get();
+                CTask task = taskQueue.get();
                 switch (task.task)
                 {
                     case CWhatToDo.scTerminate:
                         {
                             wrtr.Write(CNetPacket.serialize(CNetTopic.Disconnect));
                             wrtr.Flush();
-                            m_server.taskQueue.Put(new CTask(CWhatToDo.sRemoveClient, null, this));
-                            Terminate();
+                            m_server.taskQueue.put(new CTask(CWhatToDo.sRemoveClient, null, this));
+                            terminate();
                             break;
                         }
                     case CWhatToDo.scSendMessage:
@@ -101,19 +106,19 @@ namespace TCPChat
             }
         }
 
-        private void OnTcpReadCB(IAsyncResult ar)
+        private void onTcpReadCB(IAsyncResult ar)
         {
             int bytesRead = 0;
             try
             {
                 bytesRead = m_netStr.EndRead(ar);
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Console.WriteLine("Client-Connection not available any more; Aborting...");
                 Console.WriteLine(e.ToString());
-                m_server.taskQueue.Put(new CTask(CWhatToDo.sRemoveClient, null, this));
-                Terminate();
+                m_server.taskQueue.put(new CTask(CWhatToDo.sRemoveClient, null, this));
+                terminate();
                 return;
             }
 
@@ -121,8 +126,8 @@ namespace TCPChat
             if (bytesRead == 0)
             {
                 Console.WriteLine("Client-Connection not available any more; Aborting...");
-                m_server.taskQueue.Put(new CTask(CWhatToDo.sRemoveClient, null, this));
-                Terminate();
+                m_server.taskQueue.put(new CTask(CWhatToDo.sRemoveClient, null, this));
+                terminate();
                 return;
             }
 
@@ -133,24 +138,25 @@ namespace TCPChat
             {
                 case CNetTopic.Message:
                     {
-                        m_server.taskQueue.Put(new CTask(CWhatToDo.sForwardMessage, ((string[])received.data)[1], this));
+                        m_server.taskQueue.put(new CTask(CWhatToDo.sForwardMessage, ((string[])received.data)[1], this));
                         break;
                     }
                 case CNetTopic.Disconnect:
                     {
-                        m_server.taskQueue.Put(new CTask(CWhatToDo.sRemoveClient, null, this));
-                        Terminate();
+                        m_server.taskQueue.put(new CTask(CWhatToDo.sRemoveClient, null, this));
+                        terminate();
                         return;
+                        break;
                     }
                 default: break;
             }
 
             Array.Clear(m_buff, 0, m_buff.Length);
 
-            m_netStr.BeginRead(m_buff, 0, m_buff.Length, OnTcpReadCB, m_netStr);
+            m_netStr.BeginRead(m_buff, 0, m_buff.Length, onTcpReadCB, m_netStr);
         }
 
-        public void Terminate()
+        public void terminate()
         {
             m_netStr.Close();
             m_netStr.Dispose();
@@ -164,7 +170,7 @@ namespace TCPChat
         ~CSClient()
         {
             Console.WriteLine("CSClient: Deconstructor");
-            Terminate();
+            terminate();
         }
     }
 }

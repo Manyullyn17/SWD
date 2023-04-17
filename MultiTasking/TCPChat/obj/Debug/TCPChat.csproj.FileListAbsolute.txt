@@ -1,0 +1,11 @@
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\bin\Debug\TCPChat.exe.config
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\bin\Debug\TCPChat.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\bin\Debug\TCPChat.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\TCPChat.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\TCPChat.csproj.SuggestedBindingRedirects.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\TCPChat.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\TCPChat.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\TCPChat.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\TCPChat.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\TCPChat.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\TCPChat\obj\Debug\TCPChat.Form1.resources
