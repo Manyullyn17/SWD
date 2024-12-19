@@ -18,3 +18,14 @@ D:\manue\Manuel\Homework\4CHEL\SWD\Drawing\Bsp1\obj\Debug\Bsp1.csproj.GenerateRe
 D:\manue\Manuel\Homework\4CHEL\SWD\Drawing\Bsp1\obj\Debug\Bsp1.csproj.CoreCompileInputs.cache
 D:\manue\Manuel\Homework\4CHEL\SWD\Drawing\Bsp1\obj\Debug\Bsp1.exe
 D:\manue\Manuel\Homework\4CHEL\SWD\Drawing\Bsp1\obj\Debug\Bsp1.pdb
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\bin\Debug\Bsp1.exe.config
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\bin\Debug\Bsp1.exe
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\bin\Debug\Bsp1.pdb
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\obj\Debug\Bsp1.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\obj\Debug\Bsp1.csproj.SuggestedBindingRedirects.cache
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\obj\Debug\Bsp1.Form1.resources
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\obj\Debug\Bsp1.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\obj\Debug\Bsp1.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\obj\Debug\Bsp1.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\obj\Debug\Bsp1.exe
+D:\manue\Manuel\repos\SWD\Drawing\Bsp1\obj\Debug\Bsp1.pdb

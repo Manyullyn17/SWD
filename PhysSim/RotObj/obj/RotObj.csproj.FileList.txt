@@ -1,0 +1,8 @@
+obj\Debug\RotObj.exe
+obj\Debug\RotObj.pdb
+bin\Debug\RotObj.exe
+bin\Debug\RotObj.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\RotObj.Form1.resources
+obj\Debug\RotObj.Properties.Resources.resources
+obj\Debug\RotObj.csproj.GenerateResource.Cache

@@ -7,3 +7,12 @@ C:\Users\manue\Desktop\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Deb
 C:\Users\manue\Desktop\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\BallSimUebung.csproj.CoreCompileInputs.cache
 C:\Users\manue\Desktop\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\BallSimUebung.exe
 C:\Users\manue\Desktop\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\BallSimUebung.pdb
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\bin\Debug\BallSimUebung.exe.config
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\bin\Debug\BallSimUebung.exe
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\bin\Debug\BallSimUebung.pdb
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\BallSimUebung.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\Balls6.Form2.resources
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\BallSimUebung.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\BallSimUebung.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\BallSimUebung.exe
+D:\manue\Manuel\repos\SWD\PhysSim\Game_Physics_SRC\3Didact\obj\Debug\BallSimUebung.pdb

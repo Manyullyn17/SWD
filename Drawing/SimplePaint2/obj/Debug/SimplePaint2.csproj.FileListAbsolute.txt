@@ -18,3 +18,4 @@ D:\manue\Manuel\repos\SWD\Drawing\SimplePaint2\obj\Debug\SimplePaint2.csproj.Gen
 D:\manue\Manuel\repos\SWD\Drawing\SimplePaint2\obj\Debug\SimplePaint2.csproj.CoreCompileInputs.cache
 D:\manue\Manuel\repos\SWD\Drawing\SimplePaint2\obj\Debug\SimplePaint.exe
 D:\manue\Manuel\repos\SWD\Drawing\SimplePaint2\obj\Debug\SimplePaint.pdb
+D:\manue\Manuel\repos\SWD\Drawing\SimplePaint2\obj\Debug\SimplePaint2.csproj.SuggestedBindingRedirects.cache

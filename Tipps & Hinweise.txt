@@ -1,0 +1,8 @@
+pri2 kommt nicht, falls schon -> blame HL
+Man kann Fragen stellen falls man nicht weiß wie z.B. eine Funktion heist
+Notepad++, kein VS
+viele Skizzen zeichnen
+einem Nichtprogrammierer erklären können
+Syntax nicht zwangsweise korrekt (Programm muss nicht wirklich laufen)
+8 Fragen, 1 kann man auslassen
+Insgesamt 28 Fragen (ohne pri2, 4 Fragen pri2)

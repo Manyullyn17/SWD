@@ -6,3 +6,12 @@ D:\SCU1819\SwDev5te\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.Properties.Re
 D:\SCU1819\SwDev5te\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.csproj.GenerateResource.Cache
 D:\SCU1819\SwDev5te\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.exe
 D:\SCU1819\SwDev5te\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\bin\Debug\ThrForm.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\bin\Debug\ThrForm.pdb
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.csproj.AssemblyReference.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.Form1.resources
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.Properties.Resources.resources
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.csproj.GenerateResource.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.csproj.CoreCompileInputs.cache
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.exe
+D:\manue\Manuel\repos\SWD\MultiTasking\FormsAndThreads\obj\Debug\ThrForm.pdb

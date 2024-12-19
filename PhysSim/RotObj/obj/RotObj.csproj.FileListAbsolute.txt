@@ -1,0 +1,8 @@
+D:\CS\CoordinateTransform\RotObj\bin\Debug\RotObj.exe
+D:\CS\CoordinateTransform\RotObj\bin\Debug\RotObj.pdb
+D:\CS\CoordinateTransform\RotObj\obj\Debug\ResolveAssemblyReference.cache
+D:\CS\CoordinateTransform\RotObj\obj\Debug\RotObj.Properties.Resources.resources
+D:\CS\CoordinateTransform\RotObj\obj\Debug\RotObj.csproj.GenerateResource.Cache
+D:\CS\CoordinateTransform\RotObj\obj\Debug\RotObj.exe
+D:\CS\CoordinateTransform\RotObj\obj\Debug\RotObj.pdb
+D:\CS\CoordinateTransform\RotObj\obj\Debug\RotObj.Form1.resources

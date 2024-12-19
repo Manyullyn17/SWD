@@ -25,3 +25,5 @@ D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.Gen
 D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.CoreCompileInputs.cache
 D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCadTest.exe
 D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCadTest.pdb
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\bin\Debug\MiniCadTest.exe.config
+D:\manue\Manuel\repos\SWD\MiniCad\MiniCad_V1\obj\x86\Debug\MiniCad V1.csproj.SuggestedBindingRedirects.cache

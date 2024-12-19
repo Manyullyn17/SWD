@@ -1,0 +1,226 @@
+
+  Beutle: 3
+     Color: Nix;  
+     Load/Store: herumprobiert nicht gefunzt
+
+  Bharadwaj: 3
+    stürtzt ab
+
+  Brunner: 1
+     WW super
+
+   Croitor: 1
+
+   FIlipovic: 2
+     geht alles Farbe eher nicht
+
+   Hentzler: 4
+     Comp: NOK;  
+
+   Jezersky: 1  
+
+   Kohlbacher: 3
+     Laden geht nicht
+
+   Krasniqi: 1
+
+   Lammer: 2,5
+    crash beim Laden;
+    schaut sonst gut aus
+
+   Lederer: 1
+
+   Lehner: 1
+
+   Lopetz: 3
+      tut irgendwie komisch
+      Farbe geht;  Load/Store nicht
+
+   Nebel: 3,5
+     crashed; 
+
+   Pfusterer: 1
+
+   Rupp: 1
+
+   Sert: 3
+     zeichnen geht;  save crashed
+     L/S Code schaut gut aus
+
+   Ziegler: 1
+
+  
+
+  Nebel 
+    Test:5 ?
+    WW: OK
+    WW-Store Aufgabe
+
+  Sert
+    WW schon mit Load/Store
+    Farbe später erkannt
+
+  Kohlbacher
+    Super WW
+
+  
+
+  
+
+ 
+
+  
+
+
+  
+
+  
+
+  
+  
+
+  
+   
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+     
+     
+
+
+ 
+
+
+
+
+
+
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+      
+      
+
+   
+    
+
+
+
+  
+
+
+
+    
+     
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
